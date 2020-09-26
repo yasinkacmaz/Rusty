@@ -3,7 +3,9 @@ use std::ops::Deref;
 
 fn main() {
     //types()
-    operators()
+    //operators()
+    //scopes()
+    constants()
 }
 
 fn types() {
@@ -62,4 +64,32 @@ fn operators() {
     // <, >, <=, >=, ==
     let logical = 5 < 3;
     println!("5 < 3 = {}", logical);
+}
+
+fn scopes() {
+    let a = 123;
+    println!("a, outside = {}", a);
+    {
+        let b = 456;
+        println!("b = {}", b);
+
+        let a = 789;
+        println!("a, inside = {}", a);
+    }
+
+    let x = "abc";
+    let x = "xyz";
+    println!("x, after redeclaration = {}", x);
+}
+
+// no fixed address, like inline
+const AGE: u8 = 25;
+// has memory address
+static YEAR: u8 = 1900;
+// mutable constant
+static mut MONTH: u8 = 9;
+
+fn constants() {
+    println!("Age = {}", AGE); // Will replace as 25
+    //println!("Month = {}", MONTH); // Not allowed
 }
