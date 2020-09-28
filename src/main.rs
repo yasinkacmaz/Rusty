@@ -1,11 +1,20 @@
+#![allow(dead_code)]
+#![allow(unused_variables)]
+#![allow(unused_imports)]
+#![allow(non_snake_case)]
+
+mod stackheap;
+
 use std::mem;
 use std::ops::Deref;
+use crate::stackheap::stack_and_heap;
 
 fn main() {
     //types()
     //operators()
     //scopes()
-    constants()
+    //constants()
+    stack_and_heap()
 }
 
 fn types() {
@@ -85,7 +94,7 @@ fn scopes() {
 // no fixed address, like inline
 const AGE: u8 = 25;
 // has memory address
-static YEAR: u8 = 1900;
+static YEAR: u8 = 10;
 // mutable constant
 static mut MONTH: u8 = 9;
 
